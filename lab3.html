@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Laba 03</title>
+</head>
+<body>
+	<style>
+		#task h1, p{
+			text-align: center;
+		}
+		#taskInputValue p{
+			text-align: left;
+			margin-left: 50px;
+		}
+	</style>
+	<script>
+		//функция определения числового значения
+		function isNumeric(n)
+		{
+			return isFinite(n);
+		}
+		//значение n - целое
+		function isInteger(n)
+		{
+			return !isNaN(parseInt(n));
+		}
+		//расчитает факториал 
+		function calculateFactorial(n)
+		{
+			if(n==0 || n==1)
+			{
+				return 1;
+			}else
+			{
+				return n*calculateFactorial(n-1);
+			}
+		}
+		//расчитает первую функцию при x<a
+		function f1(x,y,nm1)
+		{
+			var result = 0;
+			var n;
+			for(n=0;n<nm1;n++)
+			{
+				if((2*Math.pow(y,n+1)+x*n)!=0)
+				{
+                    result += Math.pow(x, n) / (2 * Math.pow(y, n + 1) + x * n);
+				}
+			}
+			return result;
+			
+		}
+		//Расчитает вторую фунцию при  x>= a
+		function f2(x,y,nm2)
+		{
+			var result = 0;
+			var n;
+			for(n=0;n<nm2;n++){
+        
+				{
+					result += (((3*x)+y)/(3*calculateFactorial(n)));
+				}
+            }
+			return result;
+		}
+		//табулирование функции
+		function f(a,nm1,nm2)
+		{
+			var rez = document.getElementById("result");
+			if(!isNumeric(a)||!isNumeric(nm1)||!isNumeric(nm2))
+			{
+				rez.innerHTML = "Ошибка! Проверьте введёные значения<br>";
+        		return;
+			}
+			if(!isInteger(nm1) || !isInteger(nm2))
+			{
+				rez.innerHTML = "Ошибка! Проверьте введёные значения<br>";
+        		return;
+			}
+			nm1 = parseInt(nm1);
+			nm2 = parseInt(nm2);
+			if(isInteger(a))
+			{
+				a=parseInt(a);
+			}else{
+				a=parseFloat(a);
+			}
+			if(nm1<2 || nm2 <2 || nm1>6 || nm2>6){
+				rez.innerHTML = "Ошибка! C такими значениями нельзя табулировать функцию<br>";
+       			return;
+			}
+			//var x0 = parseInt(Math.random()*(-1+5)-5);
+			//var xn = parseInt(Math.random()*(5-1)+1);
+			//var yn = parseInt(Math.random()*(xn-x0)+x0);
+			//var y0 = x0;
+            var x0 = -1;
+            var xn = 4;
+            var y0 = -1;
+            var yn = 1;
+			var x;
+			var y;
+			var s = "<table width='600'>";
+			var xMax=0;
+			var xMin=0;
+			var yMax=0;
+			var yMin=0;
+			var fMax=0;
+			var fMin=0;
+			var f ;
+			
+			rez.innerHTML = "Результаты табуляции от x0: " + x0 + " до xn:" + xn + "<br> от y0: "+y0+" до yn "+yn+":<br>";
+			for(x=x0;x<xn;x++){
+				for(y=y0;y<yn;y++){
+					if(x<a){
+						f = f1(x, y, nm1);
+					}else{
+						f=f2(x,y,nm2);
+					}
+					s +="<tr><td>"+x+"</td><td>"+y+"</td><td>"+f.toFixed(2)+"</td></tr>";
+						fMax = Math.max(f,fMax);
+						fMin = Math.min(f,fMin);
+						if(f==fMax){
+							xMax = x;
+							yMax = y;
+						}
+						if(f==fMin){
+							xMin = x;
+							yMin = y;
+						}
+				}
+			}
+			s+="</table><br>xMax : "+xMax+" ,yMax: "+yMax+"<br>xMin : "+xMin+" ,yMin: "+yMin;
+			console.log(s);
+			rez.innerHTML += s;
+		}
+	</script>
+	<div id="task">
+		<h1>Лабораторная работа №3</h1>
+		<p>Табулируйте функцию двух аргументов, найдите те значения аргументов, при которых
+			функция принимает <i>максимальное</i> и <i>минимальное</i> значение. В заданиях функция <strong>f</strong> 
+			табулируется по аргументам <strong>x</strong> и по <strong>y</strong> , а параметры <strong>a</strong>,
+			<strong>nm1</strong>, <strong>nm2</strong> вводятся ползователем произвольно, причем <strong>nm1</strong> и 
+			<strong>nm2</strong> должны быть целым неотрицательными числами в диапазоне <strong>[2,6]</strong>
+		</p>
+		<p>
+			<img src="C:\Users\Maroufa\OneDrive\Desktop\web3\img1.jpg"/>
+		</p>
+	</div>
+	<div id="taskInputValue">
+		<form>
+			<br>
+			Введите параметр a:<br>
+			<input type="text" id="parA" value=""><br>
+			Введите параметр nm1:<br>
+			<input type="text" id="parNM1" value=""><br>
+			Введите параметр nm2:<br>
+			<input type="text" id="parNM2" value=""><br>
+			<br>
+			<input type="button" id="button" value="Табулировать" 
+				onclick="f(form.parA.value,form.parNM1.value,form.parNM2.value)">
+		</form>
+	</div>
+	<div id="result">
+	</div>
+</body>
+</html>
