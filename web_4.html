@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dynamic Table</title>
+      <style>
+        table {
+          border-collapse: collapse;
+        }
+        th, td {
+         /* border: 1px border black;*/
+          padding: 20px;
+        }
+        #tableSize {
+          width: 150px;
+        }
+        .odd-row {
+          background-color: rgb(38, 230, 255);
+        }
+        .even-row {
+          background-color: red;
+        }
+      </style>
+  </head>
+  <body>
+
+      <input type="number" id="tableSize" min="1" max="50" step="1" placeholder="Enter table size (1-50)">
+      <button onclick="createTable()">Create Table</button>
+      <button onclick="changeBlueCellColor()">Change Blue Cell Color</button>
+      <input type="text" id="newColor" placeholder="Enter new color">
+      <button onclick="deleteRows()">Delete rows</button>
+      <button onclick="sum_or_average()">Sum or average</button>
+      <button onclick="mirrorTable()">Mirror table</button>
+      <div id="tableContainer"></div>
+
+      <script src="web_4.js"></script>
+
+  </body>
+</html>
