@@ -1,0 +1,125 @@
+html,
+body {
+    width: 100%;
+    background-color: rgb(56, 122, 122);
+}
+
+.headerDiv {
+    width: 80%;
+    margin: 0% auto;
+}
+
+.menu {
+    width: 100%;
+    background-color: rgb(20, 18, 41);
+    border: solid 1px white;
+    border-radius: 5px;
+}
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.menu li {
+    margin-left: 15px;
+}
+
+.menu a {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.menu a:hover {
+    background-color: grey;
+}
+
+.menu a:focus {
+    background-color: grey;
+    border-top: solid white 1px;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
+    border-radius: 5px;
+}
+
+.centerDiv {
+    display: block;
+    width: 80%;
+    margin: 0% auto;
+    margin-top: 1%;
+    color: white;
+}
+
+#matchDate {
+    width: 80%;
+}
+
+#matchTime {
+    width: 50%;
+}
+
+#addMatchHeader {
+    background-color: rgb(20, 18, 41);
+}
+
+#listAddedMatchs {
+    margin-top: 10px;
+    background-color: rgb(20, 18, 41);
+}
+
+::-webkit-scrollbar {
+    background-color: hsl(235, 24%, 19%);
+    width: 5px;
+}
+
+.infoPage {
+    width: 80%;
+    margin: 0% auto;
+    color: white;
+}
+
+table label {
+    margin-left: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#listAddedMatchs tr td {
+    border-bottom: 1px solid white;
+}
+
+td {
+    text-align: center;
+}
+
+button {
+    border: solid white 1px;
+    border-radius: 1%;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.imageClass {
+    width: 80%;
+    margin: 0% auto;
+}
+
+img {
+    padding: 5px;
+    width: 350px;
+    display: block;
+    margin: 0% auto;
+}

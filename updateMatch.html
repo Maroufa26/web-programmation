@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Update Match</title>
+<link rel="stylesheet" type="text/css" href="updateMatch.css">
+</head>
+<body>
+  <div class="headerDiv">
+  <header class="menu">
+     <ul>
+       <li><a href="addMatch.html">Добавить матч</a></li>
+       <li><a href="updateMatch.html">Актуализация данных</a></li>
+       <li><a href="rating.html">Рантинг</a></li>
+       <li><a href="addPronostic.html">Прогноз</a></li>
+     </ul>
+    </header>
+  </div>
+  <div class="centerDiv">
+          <div id="listMatchs">
+            <table>
+              <thead>
+                <tr>
+                  <th>Дата и время</th>
+                  <th>Команда</th>
+                  <th>QT1</th>
+                  <th>QT2</th>
+                  <th>QT3</th>
+                  <th>QT4</th>
+                  <th>Over time</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr class="firstRow">
+                <td rowspan="2"><label>21.01.2024  13:16</label></td>
+                <td><label>Атланта Хоукс</label></td>
+                <td><input type="number" name="qt11" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt12" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt13" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt14" value="0" min="0" max="70"></td>
+                <td><input type="number" name="team1OverTime" value="0" min="0" max="70"></td>
+                <td><button type="submit" name="btnSave">Обновить</button></td>
+              </tr>
+              <tr>
+                <td><label>Бостон Селтикс</label></td>
+                <td><input type="number" name="qt21" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt22" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt23" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt24" value="0" min="0" max="70"></td>
+                <td><input type="number" name="team2OverTime" value="0" min="0" max="70"></td>
+                <td><button type="submit" name="btnSave">Сохранить</button></td>
+              </tr>
+              </tbody>
+              <tbody>
+              <tr class="firstRow">
+                <td rowspan="2"><label>21.01.2024  17:10</label></td>
+                <td><label>Даллас Маверикс</label></td>
+                <td><input type="number" name="qt11" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt12" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt13" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt14" value="0" min="0" max="70"></td>
+                <td><input type="number" name="team1OverTime" value="0" min="0" max="70"></td>
+                <td><button type="submit" name="btnSave">Actualiser</button></td>
+              </tr>
+              <tr>
+                <td><label>Денвер Наггетс</label></td>
+                <td><input type="number" name="qt21" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt22" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt23" value="0" min="0" max="70"></td>
+                <td><input type="number" name="qt24" value="0" min="0" max="70"></td>
+                <td><input type="number" name="team2OverTime" value="0" min="0" max="70"></td>
+                <td><button type="submit" name="btnSave">Enregistrer</button></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>         
+   </div>
+   <div class="infoPage">
+     <p>Sur cette page, nous pouvons <i>mettre en jours</i> les points des équipe qui sont entrain de jouer.</p>
+     <p>Quand on actualise le match, les données sont directement envoyées sur la page où on peut <a href="addPronostic.html">pronostiquer</a> des matchs. A la fin du match on peut sauvegarder les données finales</p>
+   </div>
+   
+   <div class="infoPage">
+	<a href="addMatch.html">Home</a>
+   </div>
+</body>
+</html>
